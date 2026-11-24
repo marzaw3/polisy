@@ -594,7 +594,9 @@ function widokSzczegoly(id) {
           const uwagi = [z.suma != null && z.suma_opis ? z.suma_opis : null, z.uwagi].filter(Boolean).join('. ');
           return h('tr', {},
             h('td', {}, h('strong', {}, z.co)),
-            h('td', { class: 'num', 'data-label': 'Suma / limit' }, z.suma != null ? kwota(z.suma, p.waluta) : z.suma_opis || '-'),
+            z.suma != null
+              ? h('td', { class: 'num', 'data-label': 'Suma / limit' }, kwota(z.suma, p.waluta))
+              : h('td', { class: 'suma-opis', 'data-label': 'Suma / limit' }, z.suma_opis || '-'),
             uwagi ? h('td', { 'data-label': 'Uwagi' }, uwagi) : h('td', {}, ''));
         })))
       : h('p', { class: 'muted' }, 'Brak danych o zakresie.'),

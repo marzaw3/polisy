@@ -140,6 +140,7 @@ td { overflow-wrap: break-word; }
 @media (min-width: 601px) {
   table.stack td:first-child { width: 40%; }
   table.stack td.num { width: 1%; }
+  table.stack td.suma-opis { font-weight: 600; min-width: 9rem; max-width: 16rem; }
 }
 @media (max-width: 600px) {
   table.stack thead { display: none; }
