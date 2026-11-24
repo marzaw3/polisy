@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; connect-src https://api.anthropic.com https://api.github.com https://cdn.jsdelivr.net; img-src 'self' data: blob:; style-src 'self'; frame-src blob:; object-src 'none'; base-uri 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Moje polisy</title>
+<meta name="description" content="Prywatny rejestr polis ubezpieczeniowych">
+<meta name="theme-color" content="#1f4e79">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Polisy">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="stylesheet" href="styles.css?v=2">
+<script type="module" src="app.js?v=2"></script>
+</head>
+<body>
+<header class="top">
+  <button class="brand" id="go-home" type="button" aria-label="Lista polis">
+    <img src="icon.svg" alt="" width="28" height="28">
+    <span>Moje polisy</span>
+  </button>
+  <nav class="top-actions">
+    <button id="btn-add" class="btn primary" type="button">+ Dodaj polisę</button>
+    <button id="btn-ics" class="btn" type="button" title="Terminy do kalendarza">Kalendarz</button>
+    <button id="btn-settings" class="btn icon" type="button" aria-label="Ustawienia">⚙</button>
+  </nav>
+</header>
+<div id="sync" class="sync" role="status" aria-live="polite"></div>
+<main id="app" class="wrap"></main>
+<noscript><p class="wrap">Ta strona wymaga włączonego JavaScriptu.</p></noscript>
+</body>
+</html>
