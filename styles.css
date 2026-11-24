@@ -130,13 +130,17 @@ li { margin: .15rem 0; }
 @media (min-width: 900px) { .grid2 { grid-template-columns: 1fr 1fr; } }
 .facts { display: grid; grid-template-columns: max-content 1fr; gap: 4px 16px; margin: 0; }
 .facts dt { color: var(--muted); }
-.facts dd { margin: 0; font-weight: 500; overflow-wrap: anywhere; }
+.facts dd { margin: 0; font-weight: 500; overflow-wrap: break-word; min-width: 0; }
 
 table { width: 100%; border-collapse: collapse; }
 th, td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
 th { font-size: .85rem; color: var(--muted); font-weight: 600; }
 td.num { white-space: nowrap; font-weight: 600; }
-td { overflow-wrap: anywhere; }
+td { overflow-wrap: break-word; }
+@media (min-width: 601px) {
+  table.stack td:first-child { width: 40%; }
+  table.stack td.num { width: 1%; }
+}
 @media (max-width: 600px) {
   table.stack thead { display: none; }
   table.stack, table.stack tbody, table.stack tr, table.stack td { display: block; width: 100%; }
